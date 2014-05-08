@@ -10,8 +10,12 @@ angular.module('revisionsApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/quizz.html',
+        controller: 'QuizzCtrl'
+      })
+      .when('/questions', {
+        templateUrl: 'views/questions.html',
+        controller: 'QuestionsCtrl'
       })
       .otherwise({
         redirectTo: '/'
