@@ -1,0 +1,27 @@
+<form name="add_form" ng-submit="addQuestion(question, answer)" role="form" ng-show="form_show">
+
+  <div class="form-group">
+    <label class="control-label sr-only" for="title">Question</label>
+    <input ng-model="question" type="text" class="form-control" id="title" placeholder="Your question" required focus-on="question==''">
+  </div>
+
+  <div class="form-group">
+    <label class="control-label sr-only" for="content">Answer</label>
+    <textarea ng-model="answer" class="form-control" id="content" placeholder="Answer"></textarea>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Add question</button>
+    <button type="button" class="btn btn-default" ng-click="form_show=false">Close</button>
+  </div>
+</form>
+<button type="button" class="btn btn-default" ng-click="form_show=true" ng-show="!form_show">Add a question</button>
+
+
+<div class="question-list">
+
+  <div ng-repeat="q in questions | filter:search">
+    - <b>{{q.question}}</b>: {{q.answer}}
+  </div>
+
+</div>
