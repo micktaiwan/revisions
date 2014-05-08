@@ -30,14 +30,12 @@
 
 
   <div class="header">
-    <!--          <ul class="nav nav-pills pull-right">
-            <li class="active"><a ng-href="#">Home</a>
-            </li>
-           <li><a ng-href="#">About</a>
-            </li>
-            <li><a ng-href="#">Contact</a>
-            </li>
-        </ul> -->
+    <ul class="nav nav-pills pull-right">
+      <li class="active"><a ng-href="#">Quizz</a>
+      </li>
+      <li><a ng-href="#/questions">Questions</a>
+      </li>
+    </ul>
     <h3 class="text-muted"><a ng-href="#">Revisions</a>
     </h3>
   </div>
@@ -69,7 +67,8 @@
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/app.js"></script>
-  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/questions.js"></script>
+  <script src="scripts/controllers/quizz.js"></script>
   <script src="scripts/services/db.js"></script>
   <script src="scripts/env.js"></script>
   <!-- endbuild -->

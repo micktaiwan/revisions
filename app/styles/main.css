@@ -1,32 +1,27 @@
 /* Space out content a bit */
-body {
+ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
+ .header, .marketing, .footer {
   padding-left: 15px;
   padding-right: 15px;
 }
-
 /* Custom page header */
-.header {
+ .header {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 19px;
 }
 /* Make the masthead heading the same height as the navigation */
-.header h3 {
+ .header h3 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
   padding-bottom: 0px;
 }
-
 /* Custom page footer */
-.footer {
+ .footer {
   margin-top: 20px;
   padding-top: 19px;
   color: #777;
@@ -37,4 +32,19 @@ body {
 }
 .question-list {
   margin-top:20px;
+}
+.jumbotron {
+  font-size: 3em;
+  color: #07F;
+  padding: 20px;
+}
+.quizzanswer {
+  font-size: 1.5em;
+  color: #4A4;
+  padding: 10px;
+}
+.vcenter {
+  display: table !important;
+  vertical-align: middle;
+  float: none;
 }
