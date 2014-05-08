@@ -22,6 +22,10 @@
 
   <div ng-repeat="q in questions | filter:search">
     - <b>{{q.question}}</b>: {{q.answer}}
+    <button class="btn btn-danger btn-xs" ng-click="deleteQuestion(q.id)">
+      <span class="glyphicon glyphicon-trash"></span>
+      Delete
+    </button>
   </div>
 
 </div>
