@@ -15,6 +15,7 @@ angular.module('revisionsApp.services.db', []).factory('Db', function($rootScope
     var rv = [];
     for (var id in obj) {
       var o = obj[id];
+      o.id = id;
       rv.push(o);
     }
     return rv;

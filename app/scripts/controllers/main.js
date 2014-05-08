@@ -25,5 +25,11 @@ angular.module('revisionsApp')
       Db.addQuestion(q, a);
       getQuestions(); // faire mieux que ça....
     }
+
+    $scope.deleteQuestion = function(id) {
+      Db.deleteQuestion(id);
+      getQuestions(); // faire mieux que ça....
+    }
+
     getQuestions();
   });

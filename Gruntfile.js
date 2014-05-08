@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         base: 'app'
       },
       src: ['**']
-    }
+    },
 
     // Project settings
     yeoman: {
