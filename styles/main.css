@@ -36,7 +36,8 @@
 .jumbotron {
   font-size: 3em;
   color: #07F;
-  padding: 20px;
+  padding: 40px;
+  line-height: 50px;
 }
 .quizzanswer {
   font-size: 1.5em;
