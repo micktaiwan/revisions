@@ -6,7 +6,7 @@ angular.module('revisionsApp')
     $scope.question = null;
     $scope.show_form = true;
     var queue = null;
-    var index = 0;
+    var index = -1;
 
     function findByObjectId(list, id) {
       for (var i in list) {
@@ -18,10 +18,17 @@ angular.module('revisionsApp')
     }
 
     function getNextQuestion() {
-      $scope.question = queue[index];
       index += 1;
       if (index >= queue.length) index = 0;
+      $scope.question = queue[index];
     }
+
+    function getPreviousQuestion() {
+      index -= 1;
+      if (index < 0) index = queue.length-1;
+      $scope.question = queue[index];
+    }
+
 
     function shuffle(sourceArray) {
       for (var n = 0; n < sourceArray.length - 1; n++) {
@@ -43,6 +50,9 @@ angular.module('revisionsApp')
 
     $scope.getNextQuestion = function() {
       getNextQuestion();
+    }
+    $scope.getPreviousQuestion = function() {
+      getPreviousQuestion();
     }
 
     getQuestions();

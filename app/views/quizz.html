@@ -1,5 +1,6 @@
-<img src="images/revisions.jpg" class="pull-right">
-<div class="jumbotron">{{question.question}}</div>
+<img src="images/revisions.jpg" class="pull-right hidden-xs">
 <button class="btn btn-warning" ng-click="show_answer=true">Montrer la réponse</button>
-<button class="btn btn-default" ng-click="show_answer=false;getNextQuestion();">Question suivante</button>
+<button class="btn btn-default" ng-click="show_answer=false;getPreviousQuestion();"><<</button>
+<button class="btn btn-default" ng-click="show_answer=false;getNextQuestion();">>></button>
+<div class="jumbotron">{{question.question}}</div>
 <div class="quizzanswer" ng-show="show_answer">{{question.answer}}</div>
