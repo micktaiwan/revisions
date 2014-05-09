@@ -5,22 +5,22 @@
 
       <div class="form-group">
         <label class="control-label sr-only" for="title">Question</label>
-        <input ng-model="question" type="text" class="form-control" id="title" placeholder="Your question" required focus-on="question==''">
+        <input ng-model="question" type="text" class="form-control" id="title" placeholder="Question" required focus-on="question==''">
       </div>
 
       <div class="form-group">
-        <label class="control-label sr-only" for="content">Answer</label>
-        <textarea ng-model="answer" class="form-control" id="content" placeholder="Answer"></textarea>
+        <label class="control-label sr-only" for="content">Réponse</label>
+        <textarea ng-model="answer" class="form-control" id="content" placeholder="La réponse devrait être détaillée, c'est plus sympa, merci"></textarea>
       </div>
 
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Add question</button>
-        <button type="button" class="btn btn-default" ng-click="form_show=false">Close</button>
+        <button type="submit" class="btn btn-primary">Ajouter question</button>
+        <button type="button" class="btn btn-default" ng-click="form_show=false">Fermer sans rajout</button>
       </div>
     </form>
 
     <div class="btn-group">
-      <button type="button" class="btn btn-primary" ng-click="question='';answer='';form_show=true" ng-show="!form_show">Add a question</button>
+      <button type="button" class="btn btn-primary" ng-click="question='';answer='';form_show=true" ng-show="!form_show">Ajouter question</button>
     </div>
 
   </div>
@@ -29,21 +29,21 @@
 <div class="panel panel-default">
   <div class="panel-body">
     {{questions.length}} questions
-    <button type="button" class="btn btn-default btn-xs" ng-click="show_answers=!show_answers">Show all answers</button>
+    <button type="button" class="btn btn-default btn-xs" ng-click="show_answers=!show_answers">Montrer les réponses</button>
   </div>
 </div>
 
 <ul class="list-group">
   <li class="list-group-item" ng-repeat="q in questions | filter:search">
     <div class="row">
-      <div class="col-xs-11">
+      <div class="col-xs-10">
         <b>{{q.question}}</b>
         <div ng-show="show_answers">{{q.answer}}</div>
       </div>
-      <div class="col-xs-1 vcenter">
+      <div class="col-xs-2 vcenter">
         <button class="btn btn-danger btn-xs" ng-click="deleteQuestion(q.id)">
           <span class="glyphicon glyphicon-trash"></span>
-          Delete
+          Effacer
         </button>
       </div>
     </div>
