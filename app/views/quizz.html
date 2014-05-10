@@ -1,6 +1,14 @@
-<button class="btn btn-warning" ng-click="show_answer=true">Montrer la réponse</button>
-<button class="btn btn-default" ng-click="show_answer=false;getPreviousQuestion();">&lt;&lt;</button>
-<button class="btn btn-default" ng-click="show_answer=false;getNextQuestion();">&gt;&gt;</button>
+<div class="row">
+  <div class="col-xs-9">
+    <button class="btn btn-warning" ng-click="show_answer=true">Montrer la réponse</button>
+    <button class="btn btn-default" ng-click="show_answer=false;getPreviousQuestion();">&lt;&lt;</button>
+    <button class="btn btn-default" ng-click="show_answer=false;getNextQuestion();">&gt;&gt;</button>
+  </div>
+  <div class="col-xs-3">
+    <input class="form-control" ng-model="filter" placeholder="Filtrer">
+  </div>
+</div>
+<div ng-show="filtered_length>0">{{filtered_length}} questions</div>
 <div class="jumbotron">{{question.question}}</div>
 <div class="list-group" ng-show="show_answer">
   <div class="list-group-item quizzanswer">

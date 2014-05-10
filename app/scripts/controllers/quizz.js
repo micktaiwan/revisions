@@ -5,7 +5,8 @@ angular.module('revisionsApp')
 
     $scope.question = null;
     $scope.show_form = true;
-    var queue = null;
+    var queue = [];
+    var filtered = [];
     var index = -1;
 
     function findByObjectId(list, id) {
@@ -19,16 +20,15 @@ angular.module('revisionsApp')
 
     function getNextQuestion() {
       index += 1;
-      if (index >= queue.length) index = 0;
-      $scope.question = queue[index];
+      if (index >= filtered.length) index = 0;
+      $scope.question = filtered[index];
     }
 
     function getPreviousQuestion() {
       index -= 1;
-      if (index < 0) index = queue.length-1;
-      $scope.question = queue[index];
+      if (index < 0) index = filtered.length - 1;
+      $scope.question = filtered[index];
     }
-
 
     function shuffle(sourceArray) {
       for (var n = 0; n < sourceArray.length - 1; n++) {
@@ -40,10 +40,25 @@ angular.module('revisionsApp')
       }
     }
 
+    $scope.$watch('filter', function() {
+      if (queue.length == 0) return;
+      if ($scope.filter == "") {
+        filtered = queue;
+      } else {
+        filtered = queue.filter(function(i) {
+          return i.question.toUpperCase().indexOf($scope.filter.toUpperCase()) != -1
+        });
+      }
+      $scope.filtered_length = filtered.length;
+      getNextQuestion();
+    });
+
     function getQuestions() {
       Db.getQuestions(0, function(q) {
         queue = q;
         shuffle(queue);
+        filtered = queue;
+        $scope.filtered_length = filtered.length;
         getNextQuestion();
       });
     }
