@@ -50,3 +50,16 @@ Bon, j'ai pas encore fait les catégories, ça viendra :)
     </div>
   </li>
 </ul>
+
+
+<form name="import_form" ng-submit="import(txt)" role="form">
+
+  <div class="form-group">
+    <label class="control-label sr-only" for="txt">Texte d'import</label>
+    <textarea ng-model="txt" type="text" class="form-control" id="txt" placeholder="format = réponse:question" required></textarea>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Importer</button>
+  </div>
+</form>
