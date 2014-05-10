@@ -26,6 +26,7 @@
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  font-size: 0.9em;
 }
 .content {
   max-width: 730px;
@@ -34,18 +35,23 @@
   margin-top:20px;
 }
 .jumbotron {
-  font-size: 3em;
+  font-size: 2em;
   color: #07F;
-  padding: 40px;
+  padding: 30px;
   line-height: 50px;
   margin-top: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: -2;
 }
 .quizzanswer {
   font-size: 1.5em;
   color: #4A4;
-  padding: 10px;
   white-space: pre-wrap;
+}
+.imgback {
+  position: relative;
+  z-index: -1;
 }
 .vcenter {
   display: table !important;
